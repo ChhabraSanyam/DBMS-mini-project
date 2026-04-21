@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Route: {{ route.Route_Name }}</h2>
+    <p>Below is the sequence of stops for this route (Demonstrating Many-to-Many resolution):</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Sequence</th>
+                <th>Stop Name</th>
+                <th>Landmark</th>
+                <th>ETA</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for stop in stops %}
+            <tr>
+                <td>{{ stop.Stop_Sequence }}</td>
+                <td><a href="{{ url_for('stop_details', stop_id=stop.Stop_ID) }}">{{ stop.Stop_Name }}</a></td>
+                <td>{{ stop.Location_Landmark }}</td>
+                <td>{{ stop.Estimated_Arrival_Time }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

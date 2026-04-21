@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>All Bus Stops</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Stop Name</th>
+                <th>Landmark</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for stop in stops %}
+            <tr>
+                <td>{{ stop.Stop_ID }}</td>
+                <td>{{ stop.Stop_Name }}</td>
+                <td>{{ stop.Location_Landmark }}</td>
+                <td><a href="{{ url_for('stop_details', stop_id=stop.Stop_ID) }}">View Routes</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

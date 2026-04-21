@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Dashboard</h2>
+    <div class="card-container">
+        <div class="card">
+            <h3>Routes</h3>
+            <p style="font-size: 2rem;">{{ route_count }}</p>
+            <a href="{{ url_for('routes') }}">View Routes</a>
+        </div>
+        <div class="card">
+            <h3>Buses</h3>
+            <p style="font-size: 2rem;">{{ bus_count }}</p>
+        </div>
+        <div class="card">
+            <h3>Students</h3>
+            <p style="font-size: 2rem;">{{ student_count }}</p>
+            <a href="{{ url_for('students') }}">Manage Students</a>
+        </div>
+    </div>
+{% endblock %}

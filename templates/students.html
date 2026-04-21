@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Manage Students</h2>
+    
+    <h3>Add New Student</h3>
+    <form method="POST">
+        <label>Name:</label>
+        <input type="text" name="name" required>
+        <label>Grade:</label>
+        <input type="text" name="grade" placeholder="e.g. 10th">
+        <label>Pick-up Stop:</label>
+        <select name="stop_id">
+            {% for stop in stops %}
+                <option value="{{ stop.Stop_ID }}">{{ stop.Stop_Name }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Register Student</button>
+    </form>
+
+    <h3>Student List</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Grade</th>
+                <th>Assigned Stop</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for student in students %}
+            <tr>
+                <td>{{ student.Student_ID }}</td>
+                <td>{{ student.Name }}</td>
+                <td>{{ student.Grade }}</td>
+                <td>{{ student.Stop_Name }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

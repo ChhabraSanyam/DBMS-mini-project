@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Stop Details: {{ stop.Stop_Name }}</h2>
+    <p><strong>Landmark:</strong> {{ stop.Location_Landmark }}</p>
+
+    <h3>Routes Passing Through This Stop</h3>
+    <p>(Many-to-Many focus: One stop can belong to multiple routes)</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Route Name</th>
+                <th>Stop Sequence on Route</th>
+                <th>ETA</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for route in routes %}
+            <tr>
+                <td><a href="{{ url_for('route_details', route_id=route.Route_ID) }}">{{ route.Route_Name }}</a></td>
+                <td>{{ route.Stop_Sequence }}</td>
+                <td>{{ route.Estimated_Arrival_Time }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h3>Students Boarding Here</h3>
+    <ul>
+        {% for student in students %}
+            <li>{{ student.Name }} ({{ student.Grade }})</li>
+        {% else %}
+            <li>No students assigned to this stop yet.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
