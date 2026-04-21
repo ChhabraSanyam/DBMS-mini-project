@@ -2,8 +2,8 @@
 
 **Domain:** School Transport Management  
 **Focus:** Many-to-Many Routing Relations  
-**Student Name:** [Your Name]  
-**Class:** B.Tech IT 2nd Year  
+**Student Name:** Sanyam Chhabra  
+**Group:** 4I7  
 
 ---
 
@@ -17,8 +17,7 @@ The School Transport Route Database is designed to manage buses, routes, stops, 
 *   To implement and resolve Many-to-Many (M:N) relationships using junction tables.
 *   To provide a web-based interface for easy data visualization and management.
 
-## 3. Entity-Relationship (ER) Diagram
-*(Note: You can use tools like Draw.io or Lucidchart to draw this based on the description below)*
+## 3. Entity-Relationship
 
 *   **Entities:**
     *   **Student:** (Student_ID, Name, Grade)
@@ -46,7 +45,7 @@ The database is designed in **Third Normal Form (3NF)**:
 ## 5. Implementation Details
 *   **Database:** SQLite
 *   **Backend:** Python (Flask)
-*   **Frontend:** HTML/CSS (Jinja2)
+*   **Frontend:** HTML/CSS
 
 ### Key SQL Queries (M:N Highlight):
 **Find all stops for a specific route:**
